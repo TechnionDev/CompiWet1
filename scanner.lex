@@ -12,12 +12,12 @@ firstDigit   		([1-9])
 Digit           (firstDigit[0-9]*)
 letter  		([a-zA-Z])
 whitespace		([\t\n ])
-
+quote           (\")
 %%
 void                        return VOID;
 int                         return INT;
 byte                        return BYTE;
-b                           return B; //todo:: need to fix this
+b                           return B;
 bool                        return BOOL;
 and                         return AND;
 or                          return OR;
@@ -41,8 +41,8 @@ continue                    return CONTINUE;
 "+"|"-"|"*"|"/"             return BINOP;
 "//"                        return COMMENT; //TODO::need to fix this
 {firstDigit}[0-9]*|[0]      return NUM;
-0[0-9]*                     printf("Lex doesn't know what that is!\n"); //no leading zeros
 {letter}[0-9a-zA-Z]*        return ID;
+{quote}{quote}                     return STRING;
 {whitespace}				;
 .                       	printf("Lex doesn't know what that is!\n"); //TODO::need to fix this
 %%

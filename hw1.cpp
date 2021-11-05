@@ -11,92 +11,98 @@ int main()
 	int token = yylex();
     while(token) {
 	// Your code here
-       if (token == VOID){
-            showToken("VOID");
-        }
-        else if (token == INT){
-            showToken("INT");
-        }
-        else if (token == BYTE){
-            showToken("BYTE");
-        }
-        else if (token == B){
-            showToken("B");
-        }
-        else if (token == BOOL){
-            showToken("BOOL");
-        }
-        else if (token == AND){
-            showToken("AND");
-        }
-        else if (token == OR){
-            showToken("OR");
-        }
-        else if (token == NOT){
-            showToken("NOT");
-        }
-        else if (token == TRUE){
-            showToken("TRUE");
-        }
-        else if (token == FALSE){
-            showToken("FALSE");
-        }
-        else if (token == RETURN){
-            showToken("RETURN");
-        }
-        else if (token == IF){
-            showToken("IF");
-        }
-        else if (token == ELSE){
-            showToken("ELSE");
-        }
-        else if (token == WHILE){
-            showToken("WHILE");
-        }
-        else if (token == BREAK){
-            showToken("BREAK");
-        }
-        else if (token == CONTINUE){
-            showToken("CONTINUE");
-        }
-        else if (token == SC){
-            showToken("SC");
-        }
-        else if (token == COMMA){
-            showToken("COMMA");
-        }
-        else if (token == LPAREN){
-            showToken("LPAREN");
-        }
-        else if (token == RPAREN){
-            showToken("RPAREN");
-        }
-        else if (token == LBRACE){
-            showToken("LBRACE");
-        }
-        else if (token == RBRACE){
-            showToken("RBRACE");
-        }
-        else if (token == ASSIGN){
-            showToken("ASSIGN");
-        }
-        else if (token == RELOP){
-            showToken("RELOP");
-        }
-        else if (token == BINOP){
-            showToken("BINOP");
-        }
-        else if (token == COMMENT){
-            showToken("COMMENT");
-        }
-        else if (token == ID){
-            showToken("ID");
-        }
-        else if (token == NUM){
-            showToken("NUM");
-        }
-        else if (token == STRING){
-            showToken("STRING");
+        switch (token) {
+            case (VOID):
+                showToken("VOID");
+                break;
+            case INT:
+                showToken("INT");
+                break;
+            case BYTE:
+                showToken("BYTE");
+                break;
+            case B:
+                showToken("B");
+                break;
+            case BOOL:
+                showToken("BOOL");
+                break;
+            case AND:
+                showToken("AND");
+                break;
+            case OR:
+                showToken("OR");
+                break;
+            case NOT:
+                showToken("NOT");
+                break;
+            case TRUE:
+                showToken("TRUE");
+                break;
+            case FALSE:
+                showToken("FALSE");
+                break;
+            case RETURN:
+                showToken("RETURN");
+                break;
+            case IF:
+                showToken("IF");
+                break;
+            case ELSE:
+                showToken("ELSE");
+                break;
+            case WHILE:
+                showToken("WHILE");
+                break;
+            case BREAK:
+                showToken("BREAK");
+                break;
+            case CONTINUE:
+                showToken("CONTINUE");
+                break;
+            case SC:
+                showToken("SC");
+                break;
+            case COMMA:
+                showToken("COMMA");
+                break;
+            case LPAREN:
+                showToken("LPAREN");
+                break;
+            case RPAREN:
+                showToken("RPAREN");
+                break;
+            case LBRACE:
+                showToken("LBRACE");
+                break;
+            case RBRACE:
+                showToken("RBRACE");
+                break;
+            case ASSIGN:
+                showToken("ASSIGN");
+                break;
+            case RELOP:
+                showToken("RELOP");
+                break;
+            case BINOP:
+                showToken("BINOP");
+                break;
+            case COMMENT:
+                showToken("COMMENT");
+                break;
+            case ID:
+                showToken("ID");
+                break;
+            case NUM:
+                showToken("NUM");
+                break;
+            case STRING:
+                showToken("STRING");
+                break;
+            default:
+                showToken("ERROR");
+
+                //todo::add error func
         }
         token = yylex();
     }
