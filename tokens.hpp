@@ -35,4 +35,6 @@ enum tokentype {
     extern char* yytext;
     extern size_t yyleng; //TODO::need to change to size_t
     extern int yylex();
+    extern char global_str[1024];
+    extern int strIndex;
 #endif /* TOKENS_HPP_ */

@@ -4,6 +4,17 @@
 using namespace std;
 
 void showToken(const string& token){
+    if (token=="STRING"){
+        //cout <<"hii_1"<<endl;
+        cout << to_string(yylineno) + " " + token + " " + global_str <<endl;
+        memset(global_str, 0, sizeof (global_str)-1);
+        strIndex =0;
+        return;
+    } else if (token == "COMMENT"){
+        cout << to_string(yylineno) + " " + token + " " + "//" <<endl;
+        return;
+    }
+    //cout <<"hii_2"<<endl;
     cout << to_string(yylineno) + " " + token + " " + yytext <<endl;
 }
 int main()
@@ -64,7 +75,7 @@ int main()
                 showToken("SC");
                 break;
             case COMMA:
-                showToken("COMMA");
+                showToken(";");
                 break;
             case LPAREN:
                 showToken("LPAREN");
