@@ -1,13 +1,13 @@
 #include <iostream>
 #include "tokens.hpp"
-
+#include <string.h>
 using namespace std;
 
 void showToken(const string& token){
     if (token=="STRING"){
         //cout <<"hii_1"<<endl;
         cout << to_string(yylineno) + " " + token + " " + global_str <<endl;
-        memset(global_str, 0, strlen (global_str));
+        memset(global_str, 0, strlen(global_str));
         strIndex =0;
         return;
     } else if (token == "COMMENT"){
